@@ -2,7 +2,7 @@
 
 **Version:** 1.1.6
 
-[![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/OCS/osisoft.sample-ocs-authentication_client_credentials-dotnet?branchName=master)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=2582&branchName=master)
+[![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/OCS/osisoft.sample-ocs-authentication_client_credentials-dotnet?repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=2582&repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)
 
 This client uses the OAuth2/OIDC Client Credential Flow to obtain an access token. See the root folder [README](../../../README.md) for more information about this flow.
 
