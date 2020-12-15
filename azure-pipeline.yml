@@ -29,7 +29,6 @@ resources:
     type: github
     name: osisoft/OSI-Samples
     endpoint: osisoft/OSI-Samples
-    readyToInsert = False
 
 variables:
   - template: '/miscellaneous/build_templates/variables.yml@templates'
