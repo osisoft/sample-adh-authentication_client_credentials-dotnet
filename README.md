@@ -4,7 +4,7 @@
 
 [![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/OCS/osisoft.sample-ocs-authentication_client_credentials-dotnet?repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=2582&repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)
 
-This client uses the OAuth2/OIDC Client Credential Flow to obtain an access token. See the root folder [README](../../../README.md) for more information about this flow.
+This client uses the OAuth2/OIDC Client Credential Flow to obtain an access token. See the main OCS Authentication samples page [README](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md) for more information about this flow.
 
 ## Requirements
 
@@ -61,6 +61,6 @@ dotnet test
 
 Tested against DotNet 3.1.
 
-For the general steps or switch languages see the Task [ReadMe](../../)  
-For the main OCS page [ReadMe](https://github.com/osisoft/OSI-Samples-OCS)  
-For the main samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples)
+For the main OCS Authentication samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md)  
+For the main OCS samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples-OCS)  
+For the main OSIsoft samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples)
