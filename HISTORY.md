@@ -3,6 +3,8 @@
 ## 1.1.7 / 2021-01-27
 
 - Updated dependencies
+- Migrated to .NET 5.0
+- Migrated to new styling guide
 
 ## 1.1.6 / 2020-11-02
 
