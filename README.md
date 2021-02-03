@@ -1,6 +1,6 @@
 # Client Credential Flow Sample and Test
 
-**Version:** 1.1.6
+**Version:** 1.1.7
 
 [![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/OCS/osisoft.sample-ocs-authentication_client_credentials-dotnet?repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=2582&repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)
 
@@ -8,13 +8,14 @@ This client uses the OAuth2/OIDC Client Credential Flow to obtain an access toke
 
 ## Requirements
 
-- .NET Core 3.1 or later
+- .NET 5.0 or later
+    - Note: Visual Studio 16.8 or later is required for development against .NET 5.0
 
 The sample is configured using the file [appsettings.placeholder.json](ClientCredentialFlow/appsettings.placeholder.json). Before editing, rename this file to `appsettings.json`. This repository's `.gitignore` rules should prevent the file from ever being checked in to any fork or branch, to ensure credentials are not compromised.
 
 Replace the placeholders in the `appsettings.json` file with your Tenant Id, Client Id and Client Secret, and the current Api Version. There is no need to replace the Namespace Id for this sample.
 
-Developed against DotNet 3.1.
+Developed against DotNet 5.0.
 
 ## Running the sample
 
@@ -59,7 +60,7 @@ dotnet test
 
 ---
 
-Tested against DotNet 3.1.
+Tested against DotNet 5.0
 
 For the main OCS Authentication samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md)  
 For the main OCS samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples-OCS)  
