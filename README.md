@@ -1,15 +1,15 @@
 # Client Credential Flow Sample and Test
 
-**Version:** 1.1.7
+**Version:** 1.1.8
 
 [![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/OCS/osisoft.sample-ocs-authentication_client_credentials-dotnet?repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=2582&repoName=osisoft%2Fsample-ocs-authentication_client_credentials-dotnet&branchName=main)
 
-This client uses the OAuth2/OIDC Client Credential Flow to obtain an access token. See the main OCS Authentication samples page [README](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md) for more information about this flow.
+This client uses the OAuth2/OIDC Client Credential Flow to obtain an access token. See the main OCS Authentication samples page [README](https://github.com/osisoft/OSI-Samples-OCS/blob/main/docs/AUTHENTICATION_README.md) for more information about this flow.
 
 ## Requirements
 
 - .NET 5.0 or later
-    - Note: Visual Studio 16.8 or later is required for development against .NET 5.0
+  - Note: Visual Studio 16.8 or later is required for development against .NET 5.0
 
 The sample is configured using the file [appsettings.placeholder.json](ClientCredentialFlow/appsettings.placeholder.json). Before editing, rename this file to `appsettings.json`. This repository's `.gitignore` rules should prevent the file from ever being checked in to any fork or branch, to ensure credentials are not compromised.
 
@@ -62,6 +62,6 @@ dotnet test
 
 Tested against DotNet 5.0
 
-For the main OCS Authentication samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples-OCS/blob/master/docs/AUTHENTICATION_README.md)  
-For the main OCS samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples-OCS)  
-For the main OSIsoft samples page on master [ReadMe](https://github.com/osisoft/OSI-Samples)
+For the main OCS Authentication samples page [ReadMe](https://github.com/osisoft/OSI-Samples-OCS/blob/main/docs/AUTHENTICATION_README.md)  
+For the main OCS samples page [ReadMe](https://github.com/osisoft/OSI-Samples-OCS)  
+For the main OSIsoft samples page [ReadMe](https://github.com/osisoft/OSI-Samples)
