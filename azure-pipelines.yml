@@ -31,15 +31,9 @@ variables:
 
 jobs:
   - job: Tests
-    strategy:
-      matrix:
-        linux:
-          agentOS: Linux
-        windows:
-          agentOS: Windows_NT
     pool:
-      name: 00-OSIManaged-Containers
-      demands: Agent.OS -equals $(agentOS)
+      name: 00-OSIManaged-Test
+      demands: COMPUTERNAME -equals $(buildAgent)
     steps:
       - task: AzureKeyVault@2
         inputs:
