@@ -31,10 +31,22 @@ variables:
 
 jobs:
   - job: Tests
+    strategy:
+      matrix:
+        linux:
+          agentOS: Linux
+        windows:
+          agentOS: Windows_NT
     pool:
-      name: 00-OSIManaged-Test
-      demands: COMPUTERNAME -equals $(buildAgent)
+      name: 00-OSIManaged-Containers
+      demands: Agent.OS -equals $(agentOS)
     steps:
+      - template: '/miscellaneous/build_templates/config.yml@templates'
+        parameters:
+          fileOriginal: appsettings.json
+          fileLibrary: appsettings.json
+          filePath: /ClientCredentialFlow
+    
       - task: AzureKeyVault@2
         inputs:
           azureSubscription: '$(azureSubscription)'
