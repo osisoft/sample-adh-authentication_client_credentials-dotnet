@@ -42,18 +42,9 @@ jobs:
       demands: Agent.OS -equals $(agentOS)
     steps:
       # Rename Secure File
-      - powershell: Rename-Item -Path appsettings.placeholder.json -NewName appsettings.json
+      - powershell: Rename-Item -Path **/appsettings.placeholder.json -NewName appsettings.json
         workingDirectory: $(Agent.TempDirectory)
         displayName: 'Rename library config file'
-
-      # Copy files from source folder to target folder using match patterns (The match patterns will only match file paths, not folder paths)
-      - task: CopyFiles@2
-        inputs:
-          sourceFolder: $(Agent.TempDirectory)
-          contents: appsettings.json
-          targetFolder: $(Build.SourcesDirectory)/ClientCredentialFlow
-          overWrite: true # Optional
-        displayName: 'Copy library config file'
       
       # Download secrets from Azure Key Vault
       - task: AzureKeyVault@2
