@@ -31,15 +31,9 @@ variables:
 
 jobs:
   - job: Tests
-    strategy:
-      matrix:
-        linux:
-          agentOS: Linux
-        windows:
-          agentOS: Windows_NT
     pool:
-      name: 00-OSIManaged-Containers
-      demands: Agent.OS -equals $(agentOS)
+      name: 00-OSIManaged-Test
+      demands: COMPUTERNAME -equals $(buildAgent)
     steps:
       # Rename Secure File
       - powershell: Rename-Item -Path ClientCredentialFlow/appsettings.placeholder.json -NewName appsettings.json
