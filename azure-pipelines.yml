@@ -35,10 +35,14 @@ jobs:
       name: 00-OSIManaged-Test
       demands: COMPUTERNAME -equals $(buildAgent)
     steps:
+      # Remove any appsettings from previous runs
+      - powershell: Get-ChildItem -Recurse appsettings.json | Remove-Item
+        workingDirectory: $(Build.SourcesDirectory)
+        
       # Rename Secure File
       - powershell: Get-ChildItem -Recurse appsettings.placeholder.json | Rename-Item -NewName appsettings.json
         workingDirectory: $(Build.SourcesDirectory)
-        displayName: 'Rename library config file'
+        displayName: 'Rename placeholder config file'
       
       # Download secrets from Azure Key Vault
       - task: AzureKeyVault@2
