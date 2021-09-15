@@ -36,8 +36,8 @@ jobs:
       demands: COMPUTERNAME -equals $(buildAgent)
     steps:
       # Rename Secure File
-      - powershell: Rename-Item -Path ClientCredentialFlow/appsettings.placeholder.json -NewName appsettings.json
-        workingDirectory: $(Agent.TempDirectory)
+      - powershell: Get-ChildItem -Recurse appsettings.placeholder.json | Rename-Item -NewName appsettings.json
+        workingDirectory: $(Build.SourcesDirectory)
         displayName: 'Rename library config file'
       
       # Download secrets from Azure Key Vault
