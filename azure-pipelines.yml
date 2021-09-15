@@ -42,7 +42,7 @@ jobs:
       demands: Agent.OS -equals $(agentOS)
     steps:
       # Rename Secure File
-      - powershell: Rename-Item -Path **/appsettings.placeholder.json -NewName appsettings.json
+      - powershell: Rename-Item -Path ClientCredentialFlow/appsettings.placeholder.json -NewName appsettings.json
         workingDirectory: $(Agent.TempDirectory)
         displayName: 'Rename library config file'
       
