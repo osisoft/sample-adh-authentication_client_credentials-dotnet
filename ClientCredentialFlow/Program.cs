@@ -16,7 +16,7 @@ namespace ClientCredentialFlow
 
             var tenantId = GetConfigValue("TenantId");
             var clientId = GetConfigValue("ClientId");
-            var clientSecret = GetConfigValue("ClientKey");
+            var clientSecret = GetConfigValue("ClientSecret");
             var version = GetConfigValue("ApiVersion");
             ClientCredential.CreateAuthenticatedHttpClient(clientId, clientSecret);
 
