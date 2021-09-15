@@ -41,19 +41,29 @@ jobs:
       name: 00-OSIManaged-Containers
       demands: Agent.OS -equals $(agentOS)
     steps:
-      - template: '/miscellaneous/build_templates/config.yml@templates'
-        parameters:
-          fileOriginal: appsettings.json
-          fileLibrary: appsettings.json
-          filePath: /ClientCredentialFlow
-    
+      # Rename Secure File
+      - powershell: Rename-Item -Path appsettings.placeholder.json -NewName appsettings.json
+        workingDirectory: $(Agent.TempDirectory)
+        displayName: 'Rename library config file'
+
+      # Copy files from source folder to target folder using match patterns (The match patterns will only match file paths, not folder paths)
+      - task: CopyFiles@2
+        inputs:
+          sourceFolder: $(Agent.TempDirectory)
+          contents: appsettings.json
+          targetFolder: $(Build.SourcesDirectory)/ClientCredentialFlow
+          overWrite: true # Optional
+        displayName: 'Copy library config file'
+      
+      # Download secrets from Azure Key Vault
       - task: AzureKeyVault@2
         inputs:
           azureSubscription: '$(azureSubscription)'
           KeyVaultName: 'Github-Samples'
           SecretsFilter: 'ClientSecret, ClientId, TenantId'
           RunAsPreJob: false
-          
+       
+      # Replace placeholders with secrets and variables
       - task: FileTransform@1
         displayName: 'File transformation: appsettings.json'
         inputs:
