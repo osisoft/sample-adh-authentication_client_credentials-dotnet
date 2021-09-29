@@ -26,10 +26,6 @@ resources:
 
 variables:
   - template: '/miscellaneous/build_templates/variables.yml@templates'
-  - name: CredFile
-    value: appsettings.json
-  - name: CredFileLibrary
-    value: product-readiness.auth_cc_dotnet.json
   - name: analysisProject
     value: Auth_CC_DotNet
 
@@ -45,12 +41,10 @@ jobs:
       name: 00-OSIManaged-Containers
       demands: Agent.OS -equals $(agentOS)
     steps:
-      - template: '/miscellaneous/build_templates/config.yml@templates'
+      - template: '/miscellaneous/build_templates/appsettings.yml@templates'
         parameters:
-          fileOriginal: $(CredFile)
-          fileLibrary: $(CredFileLibrary)
-          filePath: /ClientCredentialFlow
-
+          secrets: 'ClientSecret, ClientId, TenantId'
+          
       - task: DotNetCoreCLI@2
         displayName: 'Nuget restore'
         inputs:
