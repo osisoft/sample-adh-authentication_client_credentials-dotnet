@@ -2,7 +2,7 @@
 
 ## 1.2.0 / 2022-01-27
 
-- Move to AVEVA Data Hub naming
+- Updated for AVEVA Data Hub
 
 ## 1.1.20 / 2022-01-17
 
