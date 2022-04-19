@@ -14,25 +14,25 @@ namespace ClientCredentialFlow
 
             ClientCredential.AdhUri = new Uri(GetConfigValue("Resource"));
 
-            var tenantId = GetConfigValue("TenantId");
-            var clientId = GetConfigValue("ClientId");
-            var clientSecret = GetConfigValue("ClientSecret");
-            var version = GetConfigValue("ApiVersion");
+            string tenantId = GetConfigValue("TenantId");
+            string clientId = GetConfigValue("ClientId");
+            string clientSecret = GetConfigValue("ClientSecret");
+            string version = GetConfigValue("ApiVersion");
             ClientCredential.CreateAuthenticatedHttpClient(clientId, clientSecret);
 
             // Make an HTTP request to ADH using the authenticated client - since this is the first request, the AuthenticationHandler will
             // authenticate and acquire an Access Token and cache it.
             try
             {
-                var uri = new Uri($"api/{version}/Tenants/{tenantId}/Users", UriKind.Relative);
-                var response = ClientCredential.AuthenticatedHttpClient.GetAsync(uri).Result;
+                Uri uri = new ($"api/{version}/Tenants/{tenantId}/Users", UriKind.Relative);
+                System.Net.Http.HttpResponseMessage response = ClientCredential.AuthenticatedHttpClient.GetAsync(uri).Result;
                 response.EnsureSuccessStatusCode();
                 Console.WriteLine(response.Content.ReadAsStringAsync().Result);
                 Console.WriteLine($"HTTP GET api/{version}/Tenants/{tenantId}/Users successful");
             }
             catch (AggregateException ex)
             {
-                foreach (var inEx in ex.Flatten().InnerExceptions)
+                foreach (Exception inEx in ex.Flatten().InnerExceptions)
                 {
                     Console.WriteLine($"Authentication failed with the following error: {inEx.Message}");
                 }
@@ -43,14 +43,14 @@ namespace ClientCredentialFlow
             // Make another request to ADH - this call should use the cached Access Token.
             try
             {
-                var uri = new Uri($"api/{version}/Tenants/{tenantId}/Users", UriKind.Relative);
-                var response = ClientCredential.AuthenticatedHttpClient.GetAsync(uri).Result;
+                Uri uri = new ($"api/{version}/Tenants/{tenantId}/Users", UriKind.Relative);
+                System.Net.Http.HttpResponseMessage response = ClientCredential.AuthenticatedHttpClient.GetAsync(uri).Result;
                 response.EnsureSuccessStatusCode();
                 Console.WriteLine($"HTTP GET api/{version}/Tenants/{tenantId}/Users successful");
             }
             catch (AggregateException ex)
             {
-                foreach (var inEx in ex.Flatten().InnerExceptions)
+                foreach (Exception inEx in ex.Flatten().InnerExceptions)
                 {
                     Console.WriteLine($"Authentication failed with the following error: {inEx.Message}");
                 }
@@ -89,7 +89,7 @@ namespace ClientCredentialFlow
                     InitConfig();
                 }
 
-                var value = _configuration[key];
+                string value = _configuration[key];
 
                 if (value == null)
                 {
