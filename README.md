@@ -3,7 +3,7 @@
 | :loudspeaker: **Notice**: Samples have been updated to reflect that they work on AVEVA Data Hub. The samples also work on OSIsoft Cloud Services unless otherwise noted. |
 | -----------------------------------------------------------------------------------------------|  
 
-**Version:** 1.2.3
+**Version:** 1.3.0
 
 [![Build Status](https://dev.azure.com/osieng/engineering/_apis/build/status/product-readiness/ADH/aveva.sample-adh-authentication_client_credentials-dotnet?branchName=main)](https://dev.azure.com/osieng/engineering/_build/latest?definitionId=2582&branchName=main)
 
@@ -11,14 +11,14 @@ This client uses the OAuth2/OIDC Client Credential Flow to obtain an access toke
 
 ## Requirements
 
-- .NET 5.0 or later
-  - Note: Visual Studio 16.8 or later is required for development against .NET 5.0
+- .NET 6.0 or later
+  - Note: Visual Studio 2022 (v17.1) or later is required for development against .NET 6.0
 
 The sample is configured using the file [appsettings.placeholder.json](ClientCredentialFlow/appsettings.placeholder.json). Before editing, rename this file to `appsettings.json`. This repository's `.gitignore` rules should prevent the file from ever being checked in to any fork or branch, to ensure credentials are not compromised.
 
 Replace the placeholders in the `appsettings.json` file with your Tenant Id, Client Id and Client Secret, and the current Api Version. There is no need to replace the Namespace Id for this sample.
 
-Developed against DotNet 5.0.
+Developed against DotNet 6.0.
 
 ## Running the sample
 
@@ -64,7 +64,7 @@ dotnet test
 
 ---
 
-Tested against DotNet 5.0
+Tested against DotNet 6.0
 
 For the main ADH Authentication samples page [ReadMe](https://github.com/osisoft/OSI-Samples-OCS/blob/main/docs/AUTHENTICATION.md)  
 For the main ADH samples page [ReadMe](https://github.com/osisoft/OSI-Samples-OCS)  
