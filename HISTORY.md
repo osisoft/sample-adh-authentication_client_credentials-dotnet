@@ -1,5 +1,9 @@
 # Version History
 
+## 1.3.5 / 2022-09-17
+
+- Automate dependabot approval and automerge
+
 ## 1.3.4 / 2022-08-11
 
 - Parameterize pool and demands
